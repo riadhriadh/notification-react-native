@@ -1,0 +1,5 @@
+rootProject.name = 'testnotif'
+include ':notification-react-native'
+project(':notification-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/notification-react-native/android')
+
+include ':app'
