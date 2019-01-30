@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TouchableHighlight} from 'react-native';
+import {Platform, StyleSheet, Text, View,TouchableHighlight,PermissionsAndroid} from 'react-native';
 import notif from 'notification-react-native';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,8 +20,28 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   test(){
-    notif.show('hello',"nitification riadh");
+    notif.show();
    
+  }
+
+  async  requestCameraPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+        {
+          'title': 'Cool Photo App Camera Permission',
+          'message': 'Cool Photo App needs access to your camera ' +
+                     'so you can take awesome pictures.'
+        }
+      )
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log("You can use the camera")
+      } else {
+        console.log("Camera permission denied")
+      }
+    } catch (err) {
+      console.warn(err)
+    }
   }
   render() {
     return (
