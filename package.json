@@ -1,13 +1,17 @@
 {
   "name": "notification-react-native",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "## Getting started",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "notification-react-native",
+    "local-notification",
+    "notification",
+    "react-native-notification"
   ],
   "author": "riadh farahti",
   "license": "ISC",
